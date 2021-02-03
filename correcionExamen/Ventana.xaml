@@ -6,10 +6,17 @@
         xmlns:local="clr-namespace:correcionExamen"
         mc:Ignorable="d"
         Title="Ventana" Height="250" Width="400">
-    <StackPanel>
-        <TextBlock Margin="50,10" Text="DATOS" HorizontalAlignment="Center"/>
+    <StackPanel Background="Orange">
+
+        <StackPanel.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource textBlockStyle1}"/>
+            <Style TargetType="Button" BasedOn="{StaticResource buttonStyle1}" />
+        </StackPanel.Resources>
+        
+        <TextBlock Margin="50,10" Text="DATOS" HorizontalAlignment="Center" Style="{StaticResource textBlockTitle}"/>
         
         <Grid x:Name="myGrid" Margin="50,10" >
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>

@@ -36,8 +36,37 @@ namespace correcionExamen
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            userHandler.AddUser(user);
-            this.Close();
+            if(Validation())
+            {
+                userHandler.AddUser(user);
+                this.Close();
+            }
+            
+
+        }
+
+        private bool Validation()
+        {
+            bool validation = true;
+
+            foreach(UIElement element in myGrid.Children)
+            {
+                if(element is TextBox)
+                {
+                    TextBox textbox = (TextBox)element;
+                    if(textbox.Text.Equals(""))
+                    {
+                        textbox.BorderBrush = new SolidColorBrush(Colors.Red);
+                        validation = false;
+                    }
+                    else
+                    {
+                        textbox.BorderBrush = new SolidColorBrush(Colors.LightGray);
+                    }
+                }
+            }
+
+            return validation;
         }
     }
 }

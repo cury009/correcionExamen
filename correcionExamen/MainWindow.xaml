@@ -6,9 +6,13 @@
         xmlns:local="clr-namespace:correcionExamen"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="400">
-    <StackPanel>
-        <TextBlock Margin="50,10" Text="DATOS" HorizontalAlignment="Center"/>
-        <ComboBox x:Name="myCombo" Margin="50,10" ItemsSource="{Binding Path=userList}" SelectionChanged="myCombo_SelectionChanged" />
+    <StackPanel Background="Orange">
+        <StackPanel.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource textBlockStyle1}"/>
+            <Style TargetType="Button" BasedOn="{StaticResource buttonStyle1}" />
+        </StackPanel.Resources>
+        <TextBlock Margin="50,10" Text="DATOS" HorizontalAlignment="Center" Style="{StaticResource textBlockTitle}"/>
+        <ComboBox x:Name="myCombo" Margin="50,10" ItemsSource="{Binding Path=userList}" SelectionChanged="myCombo_SelectionChanged"/>
         <Grid x:Name="userGrid"  Margin="50,10" Background="LightBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

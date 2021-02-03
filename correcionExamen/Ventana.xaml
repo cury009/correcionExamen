@@ -1,0 +1,39 @@
+﻿<Window x:Class="correcionExamen.Ventana"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:correcionExamen"
+        mc:Ignorable="d"
+        Title="Ventana" Height="250" Width="400">
+    <StackPanel>
+        <TextBlock Margin="50,10" Text="DATOS" HorizontalAlignment="Center"/>
+        
+        <Grid x:Name="myGrid" Margin="50,10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Nombre: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock Text="Apellidos: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock Text="Telefono: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock Text="Correo: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3"/>
+
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=nombre}"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=apellidos}"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=telefono}"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=correo}"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="ACEPTAR" Width="80" Margin="10" Click="Button_Click_1"/>
+            <Button Content="CANCELAR" Width="80" Margin="10" Click="Button_Click"/>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>

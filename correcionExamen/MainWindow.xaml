@@ -1,0 +1,36 @@
+﻿<Window x:Class="correcionExamen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:correcionExamen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400">
+    <StackPanel>
+        <TextBlock Margin="50,10" Text="DATOS" HorizontalAlignment="Center"/>
+        <ComboBox x:Name="myCombo" Margin="50,10" ItemsSource="{Binding Path=userList}" SelectionChanged="myCombo_SelectionChanged" />
+        <Grid x:Name="userGrid"  Margin="50,10" Background="LightBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Nombre: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock Text="Apellidos: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock Text="Telefono: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock Text="Correo: " HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3"/>
+
+            <TextBlock Text="{Binding Path=nombre}" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock Text="{Binding Path=apellidos}" Grid.Column="1" Grid.Row="1"/>
+            <TextBlock Text="{Binding Path=telefono}" Grid.Column="1" Grid.Row="2"/>
+            <TextBlock Text="{Binding Path=correo}" Grid.Column="1" Grid.Row="3"/>
+            
+        </Grid>
+        <Button Content="NUEVO" Margin="50,10" Click="Button_Click"/>
+    </StackPanel>
+</Window>
